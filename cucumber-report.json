@@ -1,0 +1,184 @@
+[
+  {
+    "description": "  En tant qu'utilisateur\n  Je veux pouvoir me connecter avec mes identifiants\n  Afin d'accéder à mon espace personnel",
+    "elements": [
+      {
+        "description": "",
+        "id": "connexion-utilisateur;connexion-avec-des-identifiants-valides",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Connexion avec des identifiants valides",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 714820999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "je suis sur la page de connexion",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90372200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "je saisis un email \"user@example.com\" et un mot de passe \"password123\"",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 59644100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "je clique sur le bouton de connexion",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58488899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "je dois être redirigé vers le tableau de bord",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5589800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "je dois voir un message \"Bienvenue sur votre tableau de bord\"",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30514299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 487525099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "connexion-utilisateur;connexion-avec-des-identifiants-invalides",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Connexion avec des identifiants invalides",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 660673699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "je suis sur la page de connexion",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74243900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "je saisis un email \"invalid@example.com\" et un mot de passe \"wrongpass\"",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70733000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "je clique sur le bouton de connexion",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58344799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "je dois voir un message d'erreur \"Identifiants incorrects\"",
+            "match": {
+              "location": "features\\step-definitions\\login.step.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20291000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 450435600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "connexion-utilisateur",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Connexion utilisateur",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]

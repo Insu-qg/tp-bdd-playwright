@@ -4,9 +4,13 @@ class LoginPage {
    */
   constructor(page) {
     this.page = page;
-    this.emailInput = '#email';
-    this.passwordInput = '#password';
-    this.submitButton = 'button[type="submit"]';
+    this.selectors = {
+      email: '#email',
+      password: '#password',
+      submitButton: 'button[type="submit"]',
+      welcomeMessage: '.message',
+      errorMessage: '.error-message'
+    };
   }
 
   async goto() {
@@ -14,12 +18,12 @@ class LoginPage {
   }
 
   async fillCredentials(email, password) {
-    await this.page.fill(this.emailInput, email);
-    await this.page.fill(this.passwordInput, password);
+    await this.page.fill(this.selectors.email, email);
+    await this.page.fill(this.selectors.password, password);
   }
 
   async submit() {
-    await this.page.click(this.submitButton);
+    await this.page.click(this.selectors.submitButton);
   }
 
   async isOnDashboard() {
@@ -28,13 +32,19 @@ class LoginPage {
 
   async getWelcomeMessage() {
     // Wait for the message to be visible before returning it
-    await this.page.waitForSelector('.message', { state: 'visible', timeout: 10000 });
-    return this.page.locator('.message');
+    await this.page.waitForSelector(this.selectors.welcomeMessage, { 
+      state: 'visible', 
+      timeout: 10000 
+    });
+    return this.page.locator(this.selectors.welcomeMessage);
   }
 
   async getErrorMessage() {
-    await this.page.waitForSelector('.error-message', { state: 'visible', timeout: 10000 });
-    return this.page.locator('.error-message');
+    await this.page.waitForSelector(this.selectors.errorMessage, { 
+      state: 'visible', 
+      timeout: 10000 
+    });
+    return this.page.locator(this.selectors.errorMessage);
   }
 }
 
