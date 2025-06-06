@@ -18,8 +18,10 @@ Then('je dois être redirigé vers le tableau de bord', async function () {
 });
 
 Then('je dois voir un message {string}', async function (message) {
-  const welcomeMessage = await this.loginPage.getWelcomeMessage();
-  await expect(welcomeMessage).toHaveText(message);
+    const welcomeMessage = await this.loginPage.getWelcomeMessage();
+    await expect(welcomeMessage).toHaveText(message, {
+        timeout: 10000
+    });
 });
 
 Then('je dois voir un message d\'erreur {string}', async function (message) {

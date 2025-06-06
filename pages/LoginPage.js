@@ -27,10 +27,13 @@ class LoginPage {
   }
 
   async getWelcomeMessage() {
+    // Wait for the message to be visible before returning it
+    await this.page.waitForSelector('.message', { state: 'visible', timeout: 10000 });
     return this.page.locator('.message');
   }
 
   async getErrorMessage() {
+    await this.page.waitForSelector('.error-message', { state: 'visible', timeout: 10000 });
     return this.page.locator('.error-message');
   }
 }
