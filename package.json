@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "npx vite src --port 5500",
     "test:e2e": "cucumber-js --format json:cucumber-report.json && node cucumber-reporter.js"
   },
   "keywords": [],
